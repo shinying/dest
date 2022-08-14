@@ -1,0 +1,11 @@
+-f https://download.pytorch.org/whl/torch_stable.html
+
+h5py==3.6.0
+pytorch-lightning==1.6.4
+sacred==0.8.2
+tensorboard==2.8.0
+timm==0.4.12
+torch==1.8.1+cu111
+torchmetrics==0.7.3
+torchvision==0.9.1+cu111
+transformers==4.6.0
