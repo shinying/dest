@@ -1,7 +1,7 @@
 # Learning Fine-Grained Visual Understanding <br> for Video Question Answering <br> via Decoupling Spatial-Temporal Modeling
 
 
-## Install
+## Installation
 
 Python 3.7 and CUDA 11.1 
 
@@ -11,7 +11,7 @@ pip install -r requirements.txt
 
 ## Checkpoints
 
-Checkpoints of pre-training (trm), ActivityNet-QA (anetqa), and AGQA (agqa) can be downloaded from [Drive](https://drive.google.com/drive/folders/1NpJyCZf-5kVIeB6yTheNtNsHLbw4U5yp?usp=sharing).
+Checkpoints of pre-training (trm), ActivityNet-QA (anetqa), and AGQA (agqa) can be downloaded from [Drive](https://drive.google.com/drive/folders/1NpJyCZf-5kVIeB6yTheNtNsHLbw4U5yp?usp=sharing). \
 Image-language pre-training weights are from [ALBEF](https://github.com/salesforce/ALBEF).
 
 ## Preprocess
