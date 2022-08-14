@@ -86,7 +86,7 @@ find VIDEO_DIR -type f | parallel -j8 "mkdir frames/{/.} && ffmpeg -i {} -vf fps
 
 We extract video features with [Video Swin Transformer](https://github.com/SwinTransformer/Video-Swin-Transformer) (Swin-B on Kinetics-600). \
 Please see the detailed instruction [here](https://github.com/shinying/Video-Swin-Transformer). \
-The features are gathered in an h5py file. Please rename and put it under the dataset directory.
+The features are gathered in an hdf5 file. Please rename and put it under the dataset directory.
 
 
 ## Pre-training with Temporal Referring Modeling
