@@ -54,7 +54,7 @@ class BaseDataset(torch.utils.data.Dataset):
         )
         self.ans = encoding
 
-    def collate(self, batch): #, mlm_collator):
+    def collate(self, batch):
         qid = [data["qid"] for data in batch]
 
         frames = torch.cat([data["frames"] for data in batch])
