@@ -35,7 +35,7 @@ data/
     ├── frames/
     └── agqa.h5
 ```
-For AGQA, `train_balanced.txt' and 'test_balanced.txt' are renamed as `train.json` and `test.json`. \
+For AGQA, `train_balanced.txt` and `test_balanced.txt` are renamed as `train.json` and `test.json`. \
 We randomly sample 10% data from `train.json` for validation in `val.json`. 
 
 ### Annotations
