@@ -11,7 +11,7 @@ pip install -r requirements.txt
 
 ## Checkpoints
 
-Checkpoints of pre-training (trm), ActivityNet-QA (anetqa), and AGQA (agqa) can be downloaded from [Drive](https://drive.google.com/drive/folders/1NpJyCZf-5kVIeB6yTheNtNsHLbw4U5yp?usp=sharing). \
+Checkpoints of pre-training (trm), ActivityNet-QA (anetqa), and AGQA (agqa) can be downloaded [here](https://drive.google.com/drive/folders/1NpJyCZf-5kVIeB6yTheNtNsHLbw4U5yp?usp=sharing). \
 Image-language pre-training weights are from [ALBEF](https://github.com/salesforce/ALBEF).
 
 ## Preprocess
@@ -35,6 +35,8 @@ data/
     ├── frames/
     └── agqa.h5
 ```
+For AGQA, `train_balanced.txt' and 'test_balanced.txt' are renamed as `train.json` and `test.json`. \
+We randomly sample 10% data from `train.json` for validation in `val.json`. 
 
 ### Annotations
 
