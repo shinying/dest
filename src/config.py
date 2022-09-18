@@ -153,7 +153,7 @@ def task_finetune_anetqa():
     loss_names = _loss_names({"anetqa": 1})
     batch_size = 64
     max_epoch = 5
-    val_check_interval = 0.5
+    val_check_interval = 1.
     warmup_steps = 0.1
     learning_rate = 2e-5
     lr_mult_head = 50
