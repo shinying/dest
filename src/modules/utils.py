@@ -12,8 +12,8 @@ from ..gadgets.my_metrics import Accuracy, Scalar
 def parse_loading_msg(msg):
     miss = set(m.split('.')[0] for m in msg.missing_keys)
     unexp = set(m.split('.')[0] for m in msg.unexpected_keys)
-    print("Missing:", miss)
-    print("Unexpected:", unexp)
+    print("Missing:", miss if len(miss) else "None")
+    print("Unexpected:", unexp if len(unexp) else "None")
 
 
 def set_metrics(pl_module):
@@ -60,20 +60,6 @@ def epoch_wrapup(pl_module):
 
     pl_module.log(f"{phase}/the_metric", the_metric, rank_zero_only=True)
 
-
-# def check_non_acc_grad(pl_module):
-#     if pl_module.token_type_embeddings.weight.grad is None:
-#         return True
-#     else:
-#         grad = pl_module.token_type_embeddings.weight.grad
-#         return (grad.sum() == 0).item()
-
-
-# def set_task(pl_module):
-#     pl_module.current_tasks = [
-#         k for k, v in pl_module.hparams.config["loss_names"].items() if v > 0
-#     ]
-#     return
 
 def set_schedule(pl_module):
     lr = pl_module.hparams.config["learning_rate"]
