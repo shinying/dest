@@ -6,6 +6,4 @@ python run.py with \
     num_nodes=1 \
     load_path=$CKPT \
     task_finetune_agqa \
-    per_gpu_batchsize=8 \
-    nframe=16
-    # clip16 text_bert
+    per_gpu_batchsize=16

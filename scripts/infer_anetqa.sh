@@ -5,10 +5,9 @@ fi
 
 python run.py with \
     data_root=data/anetqa \
-    num_gpus=1 \
+    num_gpus=2 \
     num_nodes=1 \
+    load_path=$CKPT \
     task_finetune_anetqa \
     per_gpu_batchsize=16 \
-    load_path=$CKPT \
     test_only=True
-    # clip16 text_bert \

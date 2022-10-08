@@ -5,10 +5,9 @@ fi
 
 python run.py with \
     data_root=data/agqa \
-    num_gpus=1 \
+    num_gpus=2 \
     num_nodes=1 \
     load_path=$CKPT \
     task_finetune_agqa \
     per_gpu_batchsize=32 \
     test_only=True
-    # clip16 text_bert \
