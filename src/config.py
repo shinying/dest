@@ -35,7 +35,7 @@ def config():
     trim = 1.
     max_video_len = 100
     max_pos_len = 100
-    num_clips = 10
+    num_clips = 8
 
     # Text Setting
     aqa_label_size = 1654
