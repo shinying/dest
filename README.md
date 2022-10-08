@@ -20,6 +20,14 @@ Input data is organized as follows:
 
 ```
 data/
+├── vatex/
+│   ├── train.json
+│   ├── val.json
+│   └── vatex.h5
+├── tgif/
+│   ├── train.json
+│   ├── val.json
+│   └── tgif.h5
 ├── anetqa/
 │   ├── train.csv
 │   ├── val.csv
@@ -94,8 +102,24 @@ The features are gathered in an hdf5 file. Please rename and put it under the da
 ## Pre-training with Temporal Referring Modeling
 
 ```sh
-bash scripts/train_trm.sh # training
-CKPT=PATH/TO/trm.ckpt bash scripts/infer_trm.sh # inference
+# Training
+python run.py with \
+    data_root=data \
+    num_gpus=1 \
+    num_nodes=1 \
+    task_pretrain_trm \
+    per_gpu_batchsize=32 \
+    load_path=/path/to/vqa.pth
+
+# Inference
+python run.py with \
+    data_root=data \
+    num_gpus=1 \
+    num_nodes=1 \
+    task_pretrain_trm \
+    per_gpu_batchsize=32 \
+    load_path=/path/to/trm.ckpt \
+    test_only=True
 ```
 
 ## Downstream
@@ -103,15 +127,47 @@ CKPT=PATH/TO/trm.ckpt bash scripts/infer_trm.sh # inference
 ### ActivityNet-QA
 
 ```sh
-bash scripts/train_anetqa.sh # training
-CKPT=PATH/TO/anetqa.ckpt bash scripts/infer_anetqa.sh # inference
+# Training
+python run.py with \
+    data_root=data/anetqa \
+    num_gpus=1 \
+    num_nodes=1 \
+    load_path=/path/to/trm.ckpt \
+    task_finetune_anetqa \
+    per_gpu_batchsize=8
+
+# Inference
+python run.py with \
+    data_root=data/anetqa \
+    num_gpus=1 \
+    num_nodes=1 \
+    load_path=/path/to/anetqa.ckpt \
+    task_finetune_anetqa \
+    per_gpu_batchsize=16 \
+    test_only=True
 ```
 
 ### AGQA
 
 ```sh
-bash scripts/train_agqa.sh # training
-CKPT=PATH/TO/agqa.ckpt bash scripts/infer_agqa.sh # inference
+# Training
+python run.py with \
+    data_root=data/agqa \
+    num_gpus=1 \
+    num_nodes=1 \
+    load_path=/path/to/trm.ckpt \
+    task_finetune_agqa \
+    per_gpu_batchsize=16
+
+# Inference
+python run.py with \
+    data_root=data/agqa \
+    num_gpus=1 \
+    num_nodes=1 \
+    load_path=/path/to/agqa.ckpt \
+    task_finetune_agqa \
+    per_gpu_batchsize=32 \
+    test_only=True
 ```
 
 ### Evaluation
@@ -134,6 +190,18 @@ bash scripts/train_anetqa_mean.sh
 bash scripts/train_agqa_mean.sh
 ```
 
+## Citation
+
+```BibTeX
+@InProceedings{lee2022learning,
+  author = {Lee, Hsin-Ying and Su, Hung-Ting and Tsai, Bing-Chen and 
+            Wu, Tsung-Han and Yeh, Jia-Fong and Hsu, Winston H.},
+  title = {{Learning Fine-Grained Visual Understanding for Video Question Answering 
+            via Decoupling Spatial-Temporal Modeling}},
+  booktitle = {British Machine Vision Conference},
+  year = {2022}
+}
+```
 
 ## Acknowledgements
 
