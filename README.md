@@ -196,13 +196,13 @@ bash scripts/train_agqa_mean.sh
 ## Citation
 
 ```BibTeX
-@InProceedings{lee2022learning,
-  author = {Lee, Hsin-Ying and Su, Hung-Ting and Tsai, Bing-Chen and 
-            Wu, Tsung-Han and Yeh, Jia-Fong and Hsu, Winston H.},
-  title = {{Learning Fine-Grained Visual Understanding for Video Question Answering 
-            via Decoupling Spatial-Temporal Modeling}},
-  booktitle = {British Machine Vision Conference},
-  year = {2022}
+@inproceedings{Lee_2022_BMVC,
+    author    = {Hsin-Ying Lee and Hung-Ting Su and Bing-Chen Tsai and Tsung-Han Wu and Jia-Fong Yeh and Winston H. Hsu},
+    title     = {Learning Fine-Grained Visual Understanding for Video Question Answering via Decoupling Spatial-Temporal Modeling},
+    booktitle = {33rd British Machine Vision Conference 2022, {BMVC} 2022, London, UK, November 21-24, 2022},
+    publisher = {{BMVA} Press},
+    year      = {2022},
+    url       = {https://bmvc2022.mpi-inf.mpg.de/0116.pdf}
 }
 ```
 
