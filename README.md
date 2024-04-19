@@ -1,5 +1,8 @@
 # Learning Fine-Grained Visual Understanding <br> for Video Question Answering <br> via Decoupling Spatial-Temporal Modeling
 
+**BMVC 2022**
+
+[Project Page](https://shinying.github.io/dest) | [arXiv](https://arxiv.org/abs/2311.18832)
 
 ## Installation
 
