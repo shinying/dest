@@ -5,7 +5,7 @@ pytorch-lightning==1.6.4
 sacred==0.8.2
 tensorboard==2.8.0
 timm==0.4.12
-torch==1.13.1
+torch
 torchmetrics==0.7.3
-torchvision==0.9.1+cu111
+torchvision
 transformers
